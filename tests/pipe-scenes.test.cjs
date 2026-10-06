@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 function game() {
-  const element = { getContext: () => ({}), addEventListener() {}, focus() {} };
+  const element = { getContext: () => ({}), addEventListener() {}, focus() {}, pause() {}, currentTime: 0, paused: false };
   const context = vm.createContext({
     document: { querySelector: () => element, querySelectorAll: () => [], addEventListener() {} },
     window: { addEventListener() {} }, requestAnimationFrame() {}
